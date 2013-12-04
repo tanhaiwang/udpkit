@@ -1,55 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1589840C-F956-4F9B-B671-5DFA8A1A5B7B}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{F9E8E09B-5ED3-44A8-877E-8A3B38CFA8C0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UdpKit</RootNamespace>
-    <AssemblyName>udpkit.platform.android</AssemblyName>
+    <AssemblyName>udpkit.examples.simple</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;UDPKIT_ANDROID</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;UDPKIT_ANDROID</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\src\udpkit.platform.native\Properties\AssemblyInfo.cs">
+    <Compile Include="..\..\src\udpkit.examples.simple\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit.examples.simple\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\udpkit.platform.native\udpNativeInvoke.cs">
-      <Link>udpNativeInvoke.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\udpkit.platform.native\udpPlatformNative.cs">
-      <Link>udpPlatformNative.cs</Link>
-    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\udpkit.examples.simple\App.config">
+      <Link>App.config</Link>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="udpkit.csproj">
       <Project>{82a76ef8-2122-437c-b34d-62d28ebfa0ba}</Project>
       <Name>udpkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="udpkit.platform.managed.csproj">
+      <Project>{38c8731b-99f5-47c4-bcf7-9bdb55eac94c}</Project>
+      <Name>udpkit.platform.managed</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

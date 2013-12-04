@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dev", "Dev", "{4B25C0C5-8D2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{03576420-ADCD-485C-B631-49F797EA9B0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "udpkit.examples.simple", "udpkit.examples.simple.csproj", "{F9E8E09B-5ED3-44A8-877E-8A3B38CFA8C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,16 @@ Global
 		{22C204CA-5052-484F-A661-A6A7A80ACBE2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{22C204CA-5052-484F-A661-A6A7A80ACBE2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{22C204CA-5052-484F-A661-A6A7A80ACBE2}.Release|Win32.ActiveCfg = Release|Any CPU
+		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Release|Win32.ActiveCfg = Release|Any CPU
 		{AAC3E356-494B-41FF-84D4-87BD05F0AA60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AAC3E356-494B-41FF-84D4-87BD05F0AA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAC3E356-494B-41FF-84D4-87BD05F0AA60}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -103,16 +115,16 @@ Global
 		{77F1C845-07A9-4B09-9209-723A66964334}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{77F1C845-07A9-4B09-9209-723A66964334}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{77F1C845-07A9-4B09-9209-723A66964334}.Release|Win32.ActiveCfg = Release|Any CPU
-		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Release|Any CPU.Build.0 = Release|Any CPU
-		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{34C61ED8-5D87-4070-A979-E89FB7839F23}.Release|Win32.ActiveCfg = Release|Any CPU
+		{F9E8E09B-5ED3-44A8-877E-8A3B38CFA8C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9E8E09B-5ED3-44A8-877E-8A3B38CFA8C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9E8E09B-5ED3-44A8-877E-8A3B38CFA8C0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F9E8E09B-5ED3-44A8-877E-8A3B38CFA8C0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F9E8E09B-5ED3-44A8-877E-8A3B38CFA8C0}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{F9E8E09B-5ED3-44A8-877E-8A3B38CFA8C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9E8E09B-5ED3-44A8-877E-8A3B38CFA8C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9E8E09B-5ED3-44A8-877E-8A3B38CFA8C0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F9E8E09B-5ED3-44A8-877E-8A3B38CFA8C0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F9E8E09B-5ED3-44A8-877E-8A3B38CFA8C0}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,5 +132,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{77F1C845-07A9-4B09-9209-723A66964334} = {4B25C0C5-8D2C-4FF4-AB3A-2004A6293FC7}
 		{66EF8FB2-CBCA-4085-9B7C-69E6792AC19F} = {4B25C0C5-8D2C-4FF4-AB3A-2004A6293FC7}
+		{F9E8E09B-5ED3-44A8-877E-8A3B38CFA8C0} = {03576420-ADCD-485C-B631-49F797EA9B0C}
 	EndGlobalSection
 EndGlobal

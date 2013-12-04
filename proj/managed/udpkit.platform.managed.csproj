@@ -7,7 +7,7 @@
     <ProjectGuid>{38C8731B-99F5-47C4-BCF7-9BDB55EAC94C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UdpKit.platform.managed</RootNamespace>
+    <RootNamespace>UdpKit</RootNamespace>
     <AssemblyName>udpkit.platform.managed</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

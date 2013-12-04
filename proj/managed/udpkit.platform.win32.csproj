@@ -7,7 +7,7 @@
     <ProjectGuid>{34C61ED8-5D87-4070-A979-E89FB7839F23}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>udpkit.platform.win32</RootNamespace>
+    <RootNamespace>UdpKit</RootNamespace>
     <AssemblyName>udpkit.platform.win32</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

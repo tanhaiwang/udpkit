@@ -7,7 +7,7 @@
     <ProjectGuid>{22C204CA-5052-484F-A661-A6A7A80ACBE2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UdpKit.platform.ios</RootNamespace>
+    <RootNamespace>UdpKit</RootNamespace>
     <AssemblyName>udpkit.platform.ios</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
