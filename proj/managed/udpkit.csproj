@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82A76EF8-2122-437C-B34D-62D28EBFA0BA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UdpKit</RootNamespace>
+    <AssemblyName>udpkit</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\src\slimmath\half.cs">
+      <Link>half.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpAddress.cs">
+      <Link>udpAddress.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpAssert.cs">
+      <Link>udpAssert.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpBitStream.cs">
+      <Link>udpBitStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpByteConverter.cs">
+      <Link>udpByteConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpCommand.cs">
+      <Link>udpCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpConfig.cs">
+      <Link>udpConfig.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpConnection.cs">
+      <Link>udpConnection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpConnectionStats.cs">
+      <Link>udpConnectionStats.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpEndpoint.cs">
+      <Link>udpEndpoint.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpEvent.cs">
+      <Link>udpEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpException.cs">
+      <Link>udpException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpHeader.cs">
+      <Link>udpHeader.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpLog.cs">
+      <Link>udpLog.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpMath.cs">
+      <Link>udpMath.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpPlatform.cs">
+      <Link>udpPlatform.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpRingBuffer.cs">
+      <Link>udpRingBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpSendHandle.cs">
+      <Link>udpSendHandle.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpSerializer.cs">
+      <Link>udpSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpSet.cs">
+      <Link>udpSet.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpSocket.cs">
+      <Link>udpSocket.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpUtils.cs">
+      <Link>udpUtils.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
