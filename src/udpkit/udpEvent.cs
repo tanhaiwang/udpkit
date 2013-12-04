@@ -30,7 +30,8 @@ namespace UdpKit {
         StreamOverflow, 
         NotConnected, 
         PacketWindowFull, 
-        SocketError
+        SocketError,
+        SerializerReturnedFalse
     }
 
     public enum UdpEventType {

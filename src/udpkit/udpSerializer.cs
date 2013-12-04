@@ -62,8 +62,8 @@ namespace UdpKit {
             Connection.socket.Raise(UdpEvent.PUBLIC_OBJECT_REJECTED, Connection, o);
         }
 
-        public abstract bool Pack (ref UdpBitStream buffer, ref object o);
-        public abstract bool Unpack (ref UdpBitStream buffer, ref object o);
+        public abstract bool Pack (ref UdpBitStream stream, ref object o);
+        public abstract bool Unpack (ref UdpBitStream stream, ref object o);
 
     }
 }

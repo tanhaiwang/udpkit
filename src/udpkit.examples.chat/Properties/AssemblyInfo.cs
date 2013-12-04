@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("udpkit.platform.managed")]
+[assembly: AssemblyTitle("udpkit.examples.complete")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("udpkit.platform.managed")]
+[assembly: AssemblyProduct("udpkit.examples.complete")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ece72cfa-d1ca-423b-a7e2-2c6c75a80198")]
+[assembly: Guid("06964735-49d3-49ce-bd95-1e7411192d78")]
 
 // Version information for an assembly consists of the following four values:
 //

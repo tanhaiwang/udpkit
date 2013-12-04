@@ -23,7 +23,9 @@ bin
 *.xcuserstate
 *.xckptlist
 *.xccheckout
-src/udpkit.unity/Library
-src/udpkit.unity/Temp
-src/udpkit.unity/*.sln
-src/udpkit.unity/*.csproj
+src/udpkit.examples.unity/*_Data/*
+src/udpkit.examples.unity/*.exe
+src/udpkit.examples.unity/Library
+src/udpkit.examples.unity/Temp
+src/udpkit.examples.unity/*.sln
+src/udpkit.examples.unity/*.csproj

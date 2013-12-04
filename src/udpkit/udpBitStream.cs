@@ -35,7 +35,7 @@ namespace UdpKit {
         internal int Length;
         internal readonly byte[] Data;
 
-        public bool Full {
+        public bool Done {
             get { return Ptr == Length; }
         }
 
@@ -397,6 +397,68 @@ namespace UdpKit {
             bytes.Byte6 = ReadByte(8);
             bytes.Byte7 = ReadByte(8);
             return bytes.Float64;
+        }
+        
+        public void WriteByteArray (byte[] from) {
+            WriteByteArray(from, 0, from.Length);
+        }
+
+        public void WriteByteArray (byte[] from, int count) {
+            WriteByteArray(from, 0, count);
+        }
+
+        public void WriteByteArray (byte[] from, int offset, int count) {
+            int p = Ptr >> 3;
+            int bitsUsed = Ptr % 8;
+            int bitsFree = 8 - bitsUsed;
+
+            if (bitsUsed == 0) {
+                Buffer.BlockCopy(from, offset, Data, p, count);
+            } else {
+                for (int i = 0; i < count; ++i) {
+                    byte value = from[offset + i];
+
+                    Data[p] &= (byte) (0xFF >> bitsFree);
+                    Data[p] |= (byte) (value << bitsUsed);
+
+                    p += 1;
+
+                    Data[p] &= (byte) (0xFF << bitsUsed);
+                    Data[p] |= (byte) (value >> bitsFree);
+                }
+            }
+
+            Ptr += (count * 8);
+        }
+        
+        public void ReadByteArray (byte[] to) {
+            ReadByteArray(to, 0, to.Length);
+        }
+
+        public void ReadByteArray (byte[] to, int count) {
+            ReadByteArray(to, 0, count);
+        }
+
+        public void ReadByteArray (byte[] to, int offset, int count) {
+            int p = Ptr >> 3;
+            int bitsUsed = Ptr % 8;
+
+            if (bitsUsed == 0) {
+                Buffer.BlockCopy(Data, p, to, offset, count);
+            } else {
+                int bitsNotUsed = 8 - bitsUsed;
+
+                for (int i = 0; i < count; ++i) {
+                    int first = Data[p] >> bitsUsed;
+
+                    p += 1;
+
+                    int second = Data[p] & (255 >> bitsNotUsed);
+                    to[offset + i] = (byte) (first | (second << bitsNotUsed));
+                }
+            }
+
+            Ptr += (count * 8);
         }
     }
 }

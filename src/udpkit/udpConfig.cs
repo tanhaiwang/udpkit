@@ -122,6 +122,11 @@ namespace UdpKit {
         /// If we should calculate network ping, this adds a 2 byte overhead to each packet, default: true
         /// </summary>
         public bool CalculateNetworkPing = true;
+        
+        /// <summary>
+        /// If we should write the packet bit size into the packet itself, this adds a 2 byte overhead to each packet, default: true
+        /// </summary>
+        public bool WritePacketBitSize = true;
 
         /// <summary>
         /// If we allow clients which are connecting to a server to implicitly accept the connection

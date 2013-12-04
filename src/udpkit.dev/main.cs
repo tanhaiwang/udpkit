@@ -31,7 +31,7 @@ namespace udpkitdev {
         static Thread serverThread;
         static Thread clientThread;
 
-        class serializer : UdpSerializer {
+        class Serializer : UdpSerializer {
             public override bool Pack (ref UdpBitStream buffer, ref object o) {
                 buffer.WriteUInt((uint) o, 32);
                 return true;
@@ -40,10 +40,6 @@ namespace udpkitdev {
             public override bool Unpack (ref UdpBitStream buffer, ref object o) {
                 o = buffer.ReadUInt(32);
                 return true;
-            }
-
-            public static serializer factory () {
-                return new serializer();
             }
         }
 
@@ -77,13 +73,13 @@ namespace udpkitdev {
         }
 
         static void Server () {
-            UdpSocket socket = new UdpSocket(new UdpPlatformManaged(), serializer.factory);
+            UdpSocket socket = UdpSocket.Create<UdpPlatformManaged, Serializer>();
             socket.Start(new UdpEndPoint(UdpIPv4Address.Localhost, 14000));
             EventLoop(socket);
         }
 
         static void Client () {
-            UdpSocket socket = new UdpSocket(new UdpPlatformManaged(), serializer.factory);
+            UdpSocket socket = UdpSocket.Create<UdpPlatformManaged, Serializer>();
             socket.Start(new UdpEndPoint(UdpIPv4Address.Localhost, 0));
             socket.Connect(new UdpEndPoint(UdpIPv4Address.Localhost, 14000));
             EventLoop(socket);

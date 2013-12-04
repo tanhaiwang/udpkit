@@ -67,11 +67,7 @@ namespace UdpKit {
             get { return platform.EndPoint; }
         }
 
-        public UdpSocket (UdpPlatform platform, UdpSerializerFactory serializerFactory)
-            : this(platform, serializerFactory, new UdpConfig()) {
-        }
-
-        public UdpSocket (UdpPlatform platform, UdpSerializerFactory serializerFactory, UdpConfig config) {
+        UdpSocket (UdpPlatform platform, UdpSerializerFactory serializerFactory, UdpConfig config) {
             this.platform = platform;
             this.serializerFactory = serializerFactory;
             this.Config = config.Duplicate();
@@ -179,7 +175,7 @@ namespace UdpKit {
             ev.Object = obj;
             Raise(ev);
         }
-        
+
         internal void Raise (int eventType, UdpConnection connection, object obj, UdpSendFailReason reason) {
             UdpEvent ev = new UdpEvent();
             ev.Type = eventType;
@@ -470,6 +466,22 @@ namespace UdpKit {
             } else {
                 UdpLog.Debug("received invalid header byte in unconnected packet from {0}", ep.ToString());
             }
+        }
+
+        public static UdpSocket Create<TPlatform, TSerializer> (UdpConfig config)
+            where TPlatform : UdpPlatform, new()
+            where TSerializer : UdpSerializer, new() {
+            return new UdpSocket(new TPlatform(), () => new TSerializer(), config);
+        }
+
+        public static UdpSocket Create<TPlatform, TSerializer> ()
+            where TPlatform : UdpPlatform, new()
+            where TSerializer : UdpSerializer, new() {
+            return Create<TPlatform, TSerializer>(new UdpConfig());
+        }
+
+        public static UdpSocketMultiplexer CreateMultiplexer (params UdpSocket[] sockets) {
+            return new UdpSocketMultiplexer(sockets);
         }
     }
 }

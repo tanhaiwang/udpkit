@@ -18,7 +18,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;UDPKIT_WIN32</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;UDPKIT_WIN32; UDPKIT_DLL_PLATFORM_WIN32</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -27,7 +27,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;UDPKIT_WIN32</DefineConstants>
+    <DefineConstants>TRACE;UDPKIT_WIN32; UUDPKIT_DLL_PLATFORM_WIN32</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -42,11 +42,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\src\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="..\..\src\udpkit.platform.managed\udpPrecisionTimer.cs">
       <Link>udpPrecisionTimer.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\udpkit.platform.native\Properties\AssemblyInfo.cs">
-      <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="..\..\src\udpkit.platform.native\udpNativeInvoke.cs">
       <Link>udpNativeInvoke.cs</Link>

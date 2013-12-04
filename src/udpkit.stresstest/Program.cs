@@ -106,7 +106,7 @@ namespace UdpKit.stresstest {
         public abstract void Started ();
 
         public SocketObject () {
-            socket = new UdpSocket(new UdpPlatformManaged(), () => new Serializer(), new UdpConfig { SimulatedLoss = 0.25f, ConnectionTimeout = 100000000, PingTimeout = 10, ConnectionLimit = -1 });
+            socket = UdpSocket.Create<UdpPlatformManaged, Serializer>(new UdpConfig { SimulatedLoss = 0.25f, ConnectionTimeout = 100000000, PingTimeout = 10, ConnectionLimit = -1 });
         }
 
         public void Start () {
@@ -207,7 +207,7 @@ namespace UdpKit.stresstest {
             }
         }
 
-        const int ClientCount = 1;
+        const int ClientCount = 32;
 
         static SocketObject[] sockets;
         static DateTime start;

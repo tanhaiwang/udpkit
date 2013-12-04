@@ -18,7 +18,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;UDPKIT_DLL_UDPKIT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
@@ -36,11 +36,11 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\src\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="..\..\src\slimmath\half.cs">
       <Link>half.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\udpkit\Properties\AssemblyInfo.cs">
-      <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="..\..\src\udpkit\udpAddress.cs">
       <Link>udpAddress.cs</Link>
@@ -101,6 +101,9 @@
     </Compile>
     <Compile Include="..\..\src\udpkit\udpSocket.cs">
       <Link>udpSocket.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\udpkit\udpSocketMultiplexer.cs">
+      <Link>udpSocketMultiplexer.cs</Link>
     </Compile>
     <Compile Include="..\..\src\udpkit\udpUtils.cs">
       <Link>udpUtils.cs</Link>

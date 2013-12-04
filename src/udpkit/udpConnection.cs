@@ -280,7 +280,7 @@ namespace UdpKit {
         }
 
         void OnCommandReceived (UdpBitStream buffer) {
-            if (ParseHeader(buffer)) {
+            if (ParseHeader(ref buffer)) {
                 stats.CommandsReceived += 1;
 
                 buffer.Ptr = UdpHeader.GetSize(socket);
@@ -336,6 +336,8 @@ namespace UdpKit {
                     } else {
                         stats.PacketSent();
                     }
+                } else {
+                    socket.Raise(UdpEvent.PUBLIC_OBJECT_SEND_FAILED, this, obj, UdpSendFailReason.SerializerReturnedFalse);
                 }
             }
         }
@@ -412,9 +414,14 @@ namespace UdpKit {
             return UdpSendFailReason.None;
         }
 
-        bool ParseHeader (UdpBitStream buffer) {
+        bool ParseHeader (ref UdpBitStream buffer) {
             UdpHeader header = new UdpHeader();
-            header.Unpack(buffer, socket);
+            header.Unpack(new UdpBitStream(buffer.Data, buffer.Length, 0), socket);
+
+            // Assign bit size
+            if (socket.Config.WritePacketBitSize) {
+                buffer.Length = header.BitSize;
+            }
 
             int seqDistance = UdpMath.SeqDistance(header.ObjSequence, recvSequence, UdpHeader.SEQ_PADD);
 
@@ -451,7 +458,7 @@ namespace UdpKit {
             if (CheckState(UdpConnectionState.Connected) == false)
                 return;
 
-            if (ParseHeader(buffer)) {
+            if (ParseHeader(ref buffer)) {
                 object obj = null;
                 buffer.Ptr = UdpHeader.GetSize(socket);
 
